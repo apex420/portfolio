@@ -1,0 +1,216 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom scrollbar for WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #111;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff6347;
+    border-radius: 10px;
+    border: 3px solid #111;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff4500;
+}
+
+/* Custom scrollbar for Mozilla browsers (Firefox) */
+body {
+    scrollbar-width: thin;
+    scrollbar-color: #ff6347 #111;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #ccc;
+    background: linear-gradient(135deg, #000000 0%, #333333 100%);
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #111;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ff6347;
+}
+
+.hero-section, .about-section, .skills-section, .work-section, .testimonials-section, .contact-section {
+    padding: 4rem 2rem;
+    text-align: center;
+    animation: popUpSlide 1s ease-in-out forwards;
+    opacity: 0;
+}
+
+.hero-section {
+    padding: 5rem 2rem;
+}
+
+.skills-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.skill {
+    background-color: #222;
+    margin: 1rem;
+    padding: 2rem;
+    width: 250px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+}
+
+.skill i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ff6347;
+}
+
+.skill:hover {
+    transform: scale(1.05);
+    background-color: #444;
+}
+
+.work-library {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.work-item {
+    background-color: #222;
+    margin: 1rem;
+    padding: 1rem;
+    width: 300px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.work-item:hover {
+    transform: scale(1.05);
+    background-color: #444;
+}
+
+.testimonials-section {
+    background-color: #111;
+    color: #fff;
+}
+
+.testimonial {
+    background-color: #222;
+    margin: 1rem;
+    padding: 1rem;
+    border-left: 5px solid #ff6347;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #111;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.social-links {
+    margin-bottom: 1rem;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #ff6347;
+}
+
+/* Keyframes for animations */
+@keyframes popUpSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Delay animations for sections */
+.about-section {
+    animation-delay: 0.5s;
+}
+
+.skills-section {
+    animation-delay: 1s;
+}
+
+.work-section {
+    animation-delay: 1.5s;
+}
+
+.testimonials-section {
+    animation-delay: 2s;
+}
+
+.contact-section {
+    animation-delay: 2.5s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .hero-section, .about-section, .skills-section, .work-section, .testimonials-section, .contact-section {
+        padding: 2rem 1rem;
+    }
+
+    .skill, .work-item {
+        width: 90%;
+    }
+}
